@@ -25,11 +25,8 @@ def get_latest_gradle_version_and_checksum():
             checksum = checksum_row.find_all('td')[1].text.strip()
 
     # Output the results
-    if latest_version and checksum:
-        print(f"Latest Gradle Version: {latest_version}")
-        print(f"Checksum: {checksum}")
-    else:
-        print("Failed to retrieve the latest version or checksum.")
+    print(f"Latest Gradle Version: {latest_version}")
+    print(f"Checksum: {checksum}")
 
 if __name__ == "__main__":
     get_latest_gradle_version_and_checksum()
