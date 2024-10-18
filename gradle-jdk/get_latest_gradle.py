@@ -14,9 +14,9 @@ def get_latest_gradle_version_and_checksum():
     soup = BeautifulSoup(response.text, 'html.parser')
 
     # Find the latest version (assuming it's in a specific format)
-    versions = soup.find_all(string=re.compile(r'Gradle \d+\.\d+\.\d+'))
+    versions = soup.find_all(string=re.compile(r'v\d+\.\d+\.\d+'))
     latest_version = versions[0].split()[1] if versions else None
-
+ 
     # Find the checksum for the latest version
     checksum = None
     if latest_version:
