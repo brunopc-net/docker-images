@@ -14,8 +14,9 @@ def get_latest_gradle_version_and_checksum():
     soup = BeautifulSoup(response.text, 'html.parser')
 
     # Find the latest version (assuming it's in a specific format)
-    versions = soup.find_all(string=re.compile(r'v?(\d+\.\d+\.\d+)'))
-    print(f"versions[0]: {versions[0]}")
+    last = soup.find('main').find('h3').get_text()
+
+    print(f"last: {last}")
 
     latest_version = versions[0].split()[1] if versions else None
  
