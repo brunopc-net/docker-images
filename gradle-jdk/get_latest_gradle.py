@@ -22,7 +22,7 @@ def get_latest_gradle_version_and_checksum():
     if latest_version:
         checksum_row = soup.find(string=latest_version).find_parent('tr')
         if checksum_row:
-            checksum = checksum_row.find_all('td')[1].text.strip()
+            checksum = checksum_row.find_all('td')[1].string.strip()
 
     # Output the results
     if latest_version and checksum:
