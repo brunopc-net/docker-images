@@ -24,4 +24,4 @@ jobs:
 
       - name: Run the script
         run: |
-          python get_latest_gradle.py
+          python gradle_jdk/get_latest_gradle.py
