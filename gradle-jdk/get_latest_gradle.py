@@ -13,22 +13,12 @@ def get_latest_gradle_version_and_checksum():
     # Parse the HTML
     soup = BeautifulSoup(response.text, 'html.parser')
 
+    main = soup.find('main')
     # Find the latest version (assuming it's in a specific format)
-    last = soup.find('main').find('h3').get_text().split('v')[1]
+    latest_version = main.find('h3').get_text().split('v')[1]
+    checksum = main.find('code').get_text()
 
-    print(f"last: {last}")
-
-    #latest_version = versions[0].split()[1] if versions else None
- 
-    # Find the checksum for the latest version
-    checksum = None
-    if latest_version:
-        checksum_row = soup.find(string=latest_version).find_parent('tr')
-        if checksum_row:
-            checksum = checksum_row.find_all('td')[1].text.strip()
-
-    # Output the results
-    print(f"Latest Gradle Version: {latest_version}")
+    print(f"Latest_version: {latest_version}")
     print(f"Checksum: {checksum}")
 
 if __name__ == "__main__":
