@@ -18,7 +18,7 @@ def get_latest_gradle_version_and_checksum():
 
     print(f"last: {last}")
 
-    latest_version = versions[0].split()[1] if versions else None
+    #latest_version = versions[0].split()[1] if versions else None
  
     # Find the checksum for the latest version
     checksum = None
