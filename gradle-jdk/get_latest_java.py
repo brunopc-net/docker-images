@@ -11,12 +11,11 @@ def get_latest_java_version():
     session = HTMLSession()
     r = session.get(url)
     r.html.render(timeout=20)
-    print(f"Html: {r.html.html}")
     
     content = r.html.find('body', first=True).text
     print(f"Content: {content}")
 
-    java_version = r.html.find('p:contains("JAVA_VERSION")', first=True)
+    java_version = r.html.find('p:contains("JAVA_VERSION")', first=True).text
     print(f"Java version: {java_version}")
 
 if __name__ == "__main__":
