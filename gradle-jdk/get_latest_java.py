@@ -10,11 +10,7 @@ def get_latest_java_version():
     # Fetch the HTML content
     session = HTMLSession()
     r = session.get(url)
-    r.html.render(sleep=8, timeout=16)
-
-    to_search = "JAVA_VERSION=jdk-"
-    query = f'p:contains("{to_search}")'
-    print(query)
+    r.html.render(sleep=5, timeout=10)
 
     result = r.html.find(f'p:contains("{to_search}")', first=True).text
     java_version = result.split(to_search)[1]
