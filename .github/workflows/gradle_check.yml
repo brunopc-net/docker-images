@@ -22,6 +22,7 @@ jobs:
         run: |
           pip install requests beautifulsoup4
 
-      - name: Run the script
+      - name: Run the scripts
         run: |
           python gradle-jdk/get_latest_gradle.py
+          python gradle-jdk/get_latest_java.py
