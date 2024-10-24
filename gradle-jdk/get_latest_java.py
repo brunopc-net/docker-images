@@ -11,6 +11,7 @@ def get_latest_java_version():
     response.raise_for_status()  # Raise an error for bad responses
 
     content = response.text
+    print(f"Content: {content}")
 
     # Extract the Java version using regex
     match = re.search(r'JAVA_VERSION=jdk-(\d+\.\d+\.\d+)', content)
