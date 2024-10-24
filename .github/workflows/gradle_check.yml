@@ -20,7 +20,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install requests requests_html lxml beautifulsoup4 
+          pip install requests requests_html lxml_html_cleanbeautifulsoup4 
 
       - name: Run the scripts
         run: |
