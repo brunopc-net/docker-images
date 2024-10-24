@@ -12,7 +12,7 @@ def get_latest_java_version():
     r = session.get(url)
     r.html.render()
     
-    java_version = r.html.search('ENV JAVA_VERSION={}')[0]
+    java_version = r.html.find('p:contains("JAVA_VERSION")', first=True)
     print(f"Java version: {java_version}")
 
 if __name__ == "__main__":
