@@ -13,10 +13,10 @@ def get_latest_java_version():
     r.html.render(sleep=8, timeout=16)
 
     to_search = "JAVA_VERSION=jdk-"
-    query = f'p:contains("${to_search}")'
+    query = f'p:contains("{to_search}")'
     print(query)
 
-    result = r.html.find(f'p:contains("${to_search}")', first=True).text
+    result = r.html.find(f'p:contains("{to_search}")', first=True).text
     java_version = result.split(to_search)[1]
 
     print(f"Java version: {java_version}")
