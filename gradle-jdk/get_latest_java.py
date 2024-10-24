@@ -10,7 +10,7 @@ def get_latest_java_version():
     # Fetch the HTML content
     session = HTMLSession()
     r = session.get(url)
-    r.html.render(timeout=20)
+    r.html.render(timeout=30)
     
     content = r.html.find('body', first=True).text
     print(f"Content: {content}")
